@@ -10,13 +10,13 @@
         $stateProvider
             .state('home' , {
                 url: '/',
-                controller: 'HomeCtrl as home',
+                controller: 'RoomCtrl as home',
                 templateUrl: '/templates/home.html'
             });
     }
 
 
     angular
-        .module('blocchat', ['ui.router', 'firebase'])
+        .module('blocChat', ['ui.router', 'firebase'])
         .config(config);
 }) ();
