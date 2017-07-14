@@ -12,11 +12,16 @@
                 url: '/',
                 controller: 'RoomCtrl as home',
                 templateUrl: '/templates/home.html'
+            })
+            .state('boot' , {
+                url: '/',
+                controller: 'bootStrapCtrl as boot',
+                templateUrl: '/templates/home.html'
             });
     }
 
 
     angular
-        .module('blocChat', ['ui.router', 'firebase'])
+        .module('blocChat', ['ui.router', 'ui.bootstrap', 'firebase'])
         .config(config);
 }) ();
