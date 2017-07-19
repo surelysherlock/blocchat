@@ -1,10 +1,13 @@
 <html>
     
-    <h1> Bloc Chat </h1>
+    <h1> Bloc Chat </h1> 
+    
+    <button type="button" ng-click="home.openModal()">New Room</button>
+    
     <ul ng-repeat="array in home.chatRooms">
-        <li> Room {{ array.$id }} </li>
+        <li> {{ array.$value }} </li>
     </ul>
 
-    <button ng-click="home.openModal()">Open Me</button>
+    
 
 </html>

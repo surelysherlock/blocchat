@@ -2,25 +2,18 @@
     function RoomCtrl(Room, $uibModal){
         this.chatRooms = Room.all;
         this.openModal = function() {
-            $uibModal.open({
-                animation: $uibModal.animationsEnabled,
-                backdrop: true,
-                controller: "bootStrapCtrl",
-                controllerAs: "boot",
-                templateUrl: "/templates/bootModal.html",
+             var opModal = $uibModal.open({
+                controller: "modalCtrl",
+                controllerAs: "modal",
+                templateUrl: "/templates/mainModal.html",
                 size: 'sm',
-                resolve: {
-                    items: function () {
-                    return $uibModal.items;
-                    }
-                }
-                })
-            }
+                });
+        };
+        
     }
-
-    
 
     angular
         .module('blocChat')
         .controller('RoomCtrl', ['Room', '$uibModal', RoomCtrl])
 })();
+

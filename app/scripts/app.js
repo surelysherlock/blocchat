@@ -13,9 +13,9 @@
                 controller: 'RoomCtrl as home',
                 templateUrl: '/templates/home.html'
             })
-            .state('boot' , {
+            .state('modal' , {
                 url: '/',
-                controller: 'bootStrapCtrl as boot',
+                controller: 'modalCtrl as modal',
                 templateUrl: '/templates/home.html'
             });
     }

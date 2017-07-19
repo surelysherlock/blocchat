@@ -5,9 +5,8 @@
     var Room = {};
 
     Room.add = function(room) {
-      rooms.$add({Room: "roomnumber"}).then(function(ref){
+      rooms.$add({$value: room}).then(function(ref){
         var id = ref.key;
-        console.log(id);
         rooms.$indexFor(id);
       })
     }
