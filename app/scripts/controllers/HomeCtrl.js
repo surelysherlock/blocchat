@@ -1,10 +1,10 @@
 (function() {
-    function HomeCtrl($uibModal){
+    function HomeCtrl($scope){
     
 
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['$scope', HomeCtrl]);
 })();

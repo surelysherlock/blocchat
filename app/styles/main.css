@@ -5,3 +5,14 @@ li {
 button {
     display: inline-flex;
 }
+
+#left {
+  float: left;
+  width: 20%;
+  overflow: hidden;
+}
+
+#right {
+  overflow: hidden;
+  width: 75%;
+}
