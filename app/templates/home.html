@@ -1,15 +1,16 @@
 <html>
-    <div id="left">
+    <div id>
     <h1> Bloc Chat </h1> 
     
     <button type="button" ng-click="home.openModal()">New Room</button>
     
-    <ul ng-repeat="array in home.chatRooms" ng-model="msgId">
-        <li> {{ array}} </li>
+    <ul ng-repeat="rooms in home.chatRooms" ng-model="msgId">
+        <button type="button" ng-click="home.activeRoom()"> {{ rooms.$id}} </button>
     </ul>
     </div>
-    <div id="right">
-    <ul ng-repeat="messages in msg.msgRotate">
+    <div>
+        <h2 align = 'center'> Messages </h2>
+    <ul ng-repeat="messages in home.msgContent">
         <li> {{ messages }}</li>
     </ul>
     </div>

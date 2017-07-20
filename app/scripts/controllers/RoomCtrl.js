@@ -1,5 +1,5 @@
 (function() {
-    function RoomCtrl(Room, $uibModal){
+    function RoomCtrl(Room, Message, $scope, $uibModal){
         this.chatRooms = Room.all;
         this.openModal = function() {
              var opModal = $uibModal.open({
@@ -9,11 +9,16 @@
                 size: 'sm',
                 });
         };
+        this.msgContent =  Message.all;
+        this.activeRoom = function () {
+            Message.getByRoomId(Room.all.$id);
+            console.log("hello");
+        }
         
     }
 
     angular
         .module('blocChat')
-        .controller('RoomCtrl', ['Room', '$uibModal', RoomCtrl])
+        .controller('RoomCtrl', ['Room', 'Message', '$scope', '$uibModal', RoomCtrl])
 })();
 
