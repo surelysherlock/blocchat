@@ -11,8 +11,8 @@
         };
         this.msgContent =  Message.all;
         this.activeRoom = function (j) {
-            var jul = Message.getByRoomId(j);
-            console.log(jul);
+            var currentRoom = Message.getByRoomId(j);
+            console.log(currentRoom);
         }
         
     }
