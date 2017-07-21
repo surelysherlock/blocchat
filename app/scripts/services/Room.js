@@ -11,7 +11,7 @@
       })
     }
 
-    Room.all = rooms;
+    Room = rooms;
 
     return Room;
     

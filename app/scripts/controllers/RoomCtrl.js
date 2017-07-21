@@ -1,6 +1,6 @@
 (function() {
     function RoomCtrl(Room, Message, $scope, $uibModal){
-        this.chatRooms = Room.all;
+        this.chatRooms = Room;
         this.openModal = function() {
              var opModal = $uibModal.open({
                 controller: "modalCtrl",
@@ -10,9 +10,9 @@
                 });
         };
         this.msgContent =  Message.all;
-        this.activeRoom = function () {
-            Message.getByRoomId(Room.all.$id);
-            console.log("hello");
+        this.activeRoom = function (j) {
+            var jul = Message.getByRoomId(j);
+            console.log(jul);
         }
         
     }

@@ -5,7 +5,7 @@
     <button type="button" ng-click="home.openModal()">New Room</button>
     
     <ul ng-repeat="rooms in home.chatRooms" ng-model="msgId">
-        <button type="button" ng-click="home.activeRoom()"> {{ rooms.$id}} </button>
+        <button type="button" ng-click="home.activeRoom(rooms.$id)"> {{ rooms}} </button>
     </ul>
     </div>
     <div>
