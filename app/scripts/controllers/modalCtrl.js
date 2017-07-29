@@ -10,7 +10,6 @@
     
      $scope.cancel = function () {
        $uibModalInstance.close();
-       console.log(Message.all[0].content);
      }
 
 }
