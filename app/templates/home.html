@@ -1,16 +1,23 @@
-<h1>Bloc Chat </h1>
-<button type="button" ng-click="home.openModal()">New Room</button>
-<div class="row">
-  <div class="col-md-3">
-    <h3>Click to join a room</h3>
-    <ul ng-repeat="room in home.chatRooms" ng-model="msgId">
-      <button type="button" ng-click="home.activeRoom(room.$id)"> {{ room.$value }} </button>
-    </ul>
+
+<html>
+  <h1>Bloc Chat </h1>
+  <button type="button" ng-click="home.openModal()">New Room</button>
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Click to join a room</h3>
+      <ul ng-repeat="room in home.chatRooms" ng-model="msgId">
+        <button type="button" ng-click="home.activeRoom(room.$id)"> {{ room.$id }} </button>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <h2 align = 'center'> Messages </h2>
+      <input type="text" ng-model="newmsg" placeholder="new message"/>
+      <button ng-click="home.createNewMessage(newmsg, home.roomId)"> Send </button>
+      <h1></h1>
+      <h1></h1>
+      <ul ng-repeat="message in home.messages">
+          <li> {{ message.content }}  </li>
+      </ul>
+    </div>
   </div>
-  <div class="col-md-9">
-    <h2 align = 'center'> Messages </h2>
-    <ul ng-repeat="message in home.messages">
-        <li> {{ message.content }}</li>
-    </ul>
-  </div>
-</div>
+</html>

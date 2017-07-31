@@ -1,6 +1,7 @@
 (function() {
-  function HomeCtrl(Room, Message, $uibModal) {
+  function HomeCtrl(Room, $scope, Message, $uibModal) {
     this.chatRooms = Room.all;
+    var currentMsg = $scope.newmsg;
 
     this.openModal = function() {
       var opModal = $uibModal.open({
@@ -11,8 +12,11 @@
       });
     };
 
-    this.createNewMessage = function(text) {
-      Message.createNewMessage(text)
+    this.createNewMessage = function(text , justify) {
+            this.sentMsg = Message.send(text, justify);
+            var roommania = Room.all.$id;
+            this.roomId = roommania;
+            console.log(Room.all);
     }
 
     this.activeRoom = function(roomId) {
@@ -22,7 +26,7 @@
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', 'Message', '$uibModal',
+    .controller('HomeCtrl', ['Room', '$scope', 'Message', '$uibModal',
       HomeCtrl
     ])
 })();
