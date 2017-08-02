@@ -13,8 +13,6 @@
       });
 
     }
-
-    console.log(currentUser);
   }
 
   angular

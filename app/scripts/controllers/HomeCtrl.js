@@ -4,7 +4,7 @@
     this.roomId;
     this.userName = $cookies.get('blocChatCurrentUser');  
     var currentTime = new Date();
-    this.sortedTime = currentTime.getHours() + ':' + currentTime.getMinutes() + ':' + currentTime.getSeconds();
+    this.sortedTime = currentTime.getHours() + ':' + currentTime.getMinutes();
 
     this.openModal = function() {
       var opModal = $uibModal.open({
@@ -19,10 +19,10 @@
       this.sentMsg = Message.send(text, roomId, this.userName, this.sortedTime);
     }
 
-    this.activeRoom = function(roomId) {
+    this.activeRoom = function(roomId, name) {
       this.messages = Message.getRoomById(roomId);
       this.roomId = roomId;
-      console.log(this.sortedTime);
+      this.currentRoom = name;
     }
   }
 

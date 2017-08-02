@@ -1,4 +1,11 @@
-<h1> Set a username </h1>
-
-<input type="text" ng-model="user" placeholder="macbook user"/>
-<button ng-click="createUser()"> Let's Chat </button>
+<div class="modal-demo">
+    <div class="modal-header">
+        <h1 class="modal-title" id="modal-title"> Set a Username </h1>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <input type="text" ng-model="user" placeholder="e.g. macbook user"/>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="createUser()"> Let's Chat </button>
+    </div>
+</div>

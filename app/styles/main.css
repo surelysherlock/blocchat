@@ -6,13 +6,10 @@ button {
     display: inline-flex;
 }
 
-#left {
-  float: left;
-  width: 20%;
-  overflow: hidden;
+.center {
+  text-align: center;
 }
 
-#right {
-  overflow: hidden;
-  width: 75%;
+.rooms {
+  margin-bottom: 5px;
 }

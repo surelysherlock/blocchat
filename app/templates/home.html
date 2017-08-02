@@ -1,24 +1,29 @@
 
 <html>
-  <h1>Bloc Chat </h1>
-  <button type="button" ng-click="home.openModal()">New Room</button>
+  <div class="col-md-12">
+    <h1 class="center">Welcome to Bloc Chat </h1>
+  </div>
+  <button type="button" class="btn btn-primary" ng-click="home.openModal()">New Room</button>
   <div class="row">
     <div class="col-md-3">
-      <h3>Click to join a room</h3>
-      <ul ng-repeat="room in home.chatRooms" ng-model="msgId">
-        <button type="button" ng-click="home.activeRoom(room.$id)"> {{ room.$value }} </button>
-      </ul>
+      <h4>Available Rooms</h4>
+      <div class="rooms" ng-repeat="room in home.chatRooms" ng-model="msgId">
+        <button type="button" class="btn btn-info" ng-click="home.activeRoom(room.$id, room.$value)"> {{ room.$value }} </button>
+      </div>
     </div>
     <div class="col-md-9">
-      <h2 align = 'center'> Messages </h2>
-      <input type="text" ng-model="newmsg" placeholder="new message"/>
-      <button ng-click="home.createNewMessage(newmsg, home.roomId)"> Send </button>
+      <div ng-show="home.currentRoom !== undefined" class="alert alert-info center" role="alert">
+        <h4>{{ home.currentRoom }}</h4>
+      </div>
       <ul ng-repeat="message in home.messages">
-          <li>  {{ home.userName }}</li>
           <li> {{ message.content }}  </li>
-          <li>  {{ message.sentAt }}</li>
+          <li>  <strong> Sent by:</strong> {{ message.userName }} <i>at </i>  {{ message.sentAt }}</li>
       </ul>
-        
+      <form ng-show="home.currentRoom !== undefined" ng-submit="home.createNewMessage(newmsg, home.roomId)">
+        <input type="text" class="form-control" ng-model="newmsg" name="text" />
+      </form>
+      <br />
+      <button type="button" class="btn btn-success" ng-click="home.createNewMessage(newmsg, home.roomId)" ng-show="home.currentRoom !== undefined"> Send </button>
     </div>
   </div>
 </html>

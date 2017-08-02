@@ -16,10 +16,9 @@
         var msgArray = $firebaseArray(ref);
         if (newMessage != undefined || newMessage != null) {
           msgArray.$add({content: newMessage, roomId: roomId, sentAt: sortedTime, userName: userName});
-        }
-        
+        }   
     };
-
+      
     return Message
   }
 

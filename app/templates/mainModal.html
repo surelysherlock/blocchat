@@ -1,11 +1,15 @@
-<h3>Create New Room</h3>
-
-<input type="text" ng-model="roomInput" placeholder="e.g. HorizonZeroDawn"/>
-<button ng-click="submit()"> OK </button>
-<button ng-click="cancel()"> Cancel </button>
-
-
-
+<div class="modal-demo">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title"> Create New Room</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <input type="text" ng-model="roomInput" placeholder="e.g. HorizonZeroDawn"/>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="submit()"> Ok </button>
+        <button class="btn btn-info" ng-click="cancel()"> Cancel </button>
+    </div>
+</div>
 
 
 
