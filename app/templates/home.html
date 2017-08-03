@@ -17,13 +17,13 @@
       </div>
       <ul ng-repeat="message in home.messages">
           <li> {{ message.content }}  </li>
-          <li>  <strong> Sent by:</strong> {{ message.userName }} <i>at </i>  {{ message.sentAt }}</li>
+          <li>  <strong> {{ message.userName }} </strong>  <i>at</i> {{ message.sentAt | date:'h' }}:{{ message.sentAt | date:'m' }}  {{ message.sentAt | date:'a' }}</li>
       </ul>
-      <form ng-show="home.currentRoom !== undefined" ng-submit="home.createNewMessage(newmsg, home.roomId)">
+      <form ng-show="home.currentRoom !== undefined" ng-submit="home.createNewMessage(newmsg, home.roomId,home.userName, home.sortedTime)">
         <input type="text" class="form-control" ng-model="newmsg" name="text" />
       </form>
       <br />
-      <button type="button" class="btn btn-success" ng-click="home.createNewMessage(newmsg, home.roomId)" ng-show="home.currentRoom !== undefined"> Send </button>
+      <button type="button" class="btn btn-success" ng-click="home.createNewMessage(newmsg, home.roomId, home.userName, home.sortedTime)" ng-show="home.currentRoom !== undefined"> Send </button>
     </div>
   </div>
 </html>

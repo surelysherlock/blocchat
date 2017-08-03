@@ -1,10 +1,9 @@
 (function() {
-  function HomeCtrl(Room, Message, $cookies, $uibModal) {
+  function HomeCtrl(Room, Message, $cookies, $filter, $uibModal) {
     this.chatRooms = Room.all;
     this.roomId;
     this.userName = $cookies.get('blocChatCurrentUser');  
-    var currentTime = new Date();
-    this.sortedTime = currentTime.getHours() + ':' + currentTime.getMinutes();
+    this.sortedTime = $filter('date')(firebase.database.ServerValue.TIMESTAMP);
 
     this.openModal = function() {
       var opModal = $uibModal.open({
@@ -16,7 +15,7 @@
     };
 
     this.createNewMessage = function(text , roomId, userName, sortedTime) {
-      this.sentMsg = Message.send(text, roomId, this.userName, this.sortedTime);
+      this.sentMsg = Message.send(text, roomId, userName, sortedTime);
     }
 
     this.activeRoom = function(roomId, name) {
@@ -28,7 +27,7 @@
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', 'Message', '$cookies' ,'$uibModal',
+    .controller('HomeCtrl', ['Room', 'Message', '$cookies' , '$filter','$uibModal',
       HomeCtrl
     ])
 })();
